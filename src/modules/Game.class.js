@@ -1,6 +1,8 @@
 'use strict';
 
 class Game {
+  scoreMax = 0;
+
   /**
    * Creates a new game instance.
    *
@@ -16,7 +18,6 @@ class Game {
    * initial state.
    */
   constructor(initialState = []) {
-    this.scoreMax = 0;
     this.board = initialState ? [...this._getBlankBoard()] : initialState;
     this.scoreCurrent = 0;
     this.gameStatus = 'idle';
@@ -69,14 +70,11 @@ class Game {
     let randRow;
     let randCol;
 
-    // Run this random generator until row and
-    // collum position in given board are zero(vacant)
     do {
       randRow = Math.floor(Math.random() * boardArrs.length);
       randCol = Math.floor(Math.random() * boardArrs[0].length);
     } while (boardArrs[randRow][randCol] !== 0);
 
-    // Add 2 or 4 with 4 10% probability
     let randValue = 2;
 
     if (Math.floor(Math.random() * 100 + 1) <= 10) {
@@ -93,14 +91,12 @@ class Game {
    * false - stop the game (no moves, win or lose)
    */
   _checkGameStatus() {
-    // Check if winning score reached
     if (this.board.some((row) => row.some((cell) => cell === 2048))) {
       this.gameStatus = 'win';
 
       return false;
     }
 
-    // Check if less then 2 evaliable tiles exist on the board
     const freeTiles = this.board.reduce(
       (acc, cur) => acc + cur.filter((cell) => cell === 0).length,
       0,
@@ -117,7 +113,6 @@ class Game {
   }
 
   _didTileMoved(newArr, oldArr) {
-    // Check if newArr same as board
     for (let row = 0; row < oldArr.length; row++) {
       for (let col = 0; col < oldArr[row].length; col++) {
         if (oldArr[row][col] !== newArr[row][col]) {
@@ -159,7 +154,6 @@ class Game {
   _shiftRight(arrN) {
     const arr = [...arrN];
 
-    // Run for each row: filter-out Zeros appen zeroes from the left
     for (let r = 0; r < arr.length; r++) {
       const temp = arr[r].filter((e) => e);
 
@@ -175,7 +169,6 @@ class Game {
   _shiftLeft(arrN) {
     const arr = [...arrN];
 
-    // Run for each row: filter-out Zeros appen zeroes from the right
     for (let r = 0; r < arr.length; r++) {
       const temp = arr[r].filter((e) => e);
 
@@ -268,10 +261,7 @@ class Game {
         break;
     }
 
-    return {
-      board: tempBoard,
-      score: tempScore,
-    };
+    return { board: tempBoard, score: tempScore };
   }
 
   /**
