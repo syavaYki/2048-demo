@@ -1,8 +1,6 @@
 'use strict';
 
 class Game {
-  scoreMax = 0;
-
   /**
    * Creates a new game instance.
    *
@@ -18,6 +16,7 @@ class Game {
    * initial state.
    */
   constructor(initialState = []) {
+    this.scoreMax = 0;
     this.board = initialState ? [...this._getBlankBoard()] : initialState;
     this.scoreCurrent = 0;
     this.gameStatus = 'idle';
@@ -261,7 +260,10 @@ class Game {
         break;
     }
 
-    return { board: tempBoard, score: tempScore };
+    return {
+      board: tempBoard,
+      score: tempScore,
+    };
   }
 
   /**

@@ -6,9 +6,7 @@
 [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Parcel](https://img.shields.io/badge/Parcel-00541D?style=for-the-badge&logo=parcel&logoColor=white)](https://parceljs.org/)
 
-This is a project for a 2048 game. It is built with modern web technologies and serves as a portfolio piece, showcasing a simple and fun game.
-
-This project is a comprehensive landing page designed to provide visitors with key information about the museum. It emphasizes a user-friendly experience with intuitive navigation, details about current exhibitions, and a visually appealing layout. The application is built with a strong focus on modern web development practices, ensuring responsiveness across all devices.
+This is a classic 2048 game built with modern web technologies. It is a simple, fun, and addictive puzzle game where the objective is to slide numbered tiles on a grid to combine them and create a tile with the number 2048.
 
 ## 🚀 Live Demo
 
@@ -22,10 +20,12 @@ Project Link: [GitHub](https://github.com/syavaYki/2048-demo)
 
 ## ✨ Features
 
-- **Responsive Design:** The game is fully responsive and looks great on all devices.
-- **Game Logic:** The core logic of the 2048 game is implemented.
-- **Score Tracking:** The game keeps track of the player's score.
-- **Simple UI:** A clean and intuitive user interface.
+- **Classic 2048 Gameplay:** The core mechanics of the original 2048 game.
+- **Score Tracking:** Keeps track of your current score and your high score.
+- **Responsive Design:** The game is fully responsive and playable on all devices.
+- **Win/Loss Conditions:** The game ends when you create a 2048 tile (win) or when there are no more possible moves (lose).
+- **Restart Functionality:** You can restart the game at any time.
+- **Random Tile Generation:** New tiles (2 or 4) are randomly added to the board after each move.
 
 ## 🛠️ Tech Stack
 
